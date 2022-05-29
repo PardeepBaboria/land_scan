@@ -1,0 +1,28 @@
+{
+  "name": "land_scan_api",
+  "version": "1.0.0",
+  "description": "Land Scan Node JS Rest api",
+  "main": "server.js",
+  "scripts": {
+    "import:devData": "set NODE_ENV=development&&node ./dev_data/seed.js --import",
+    "delete:devData": "set NODE_ENV=development&&node ./dev_data/seed.js --delete",
+    "start": "set NODE_ENV=development&&nodemon server.js"
+  },
+  "author": "pardeepbaboria",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.7",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "http": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.16",
+    "swagger-jsdoc": "^6.2.1",
+    "swagger-ui-express": "^4.3.0",
+    "uuid": "^8.3.2",
+    "validator": "^13.7.0"
+  }
+}

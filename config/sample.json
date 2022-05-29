@@ -1,0 +1,6 @@
+{
+	"namespace": "land_scan_api",
+	"node_port": "<node_port_number>",
+	"access_secret": "<access_secret>",
+	"mongo_db_url": "<mongo_db_url>"
+}

@@ -1,0 +1,6 @@
+{
+	"namespace": "land_scan_api",
+	"node_port": "4000",
+	"access_secret": "eOWagjziFOWagjzicNDiXzkNZccNDiXzkNZc",
+	"mongo_db_url": "mongodb://localhost:27017/land_scan_dev"
+}

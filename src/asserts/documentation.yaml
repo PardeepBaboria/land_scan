@@ -1,0 +1,354 @@
+paths:
+  /authentication/sign-in:
+    post:
+      tags:
+      - "authentication"
+      summary: "Api to SignIn"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "object that needs to be sign-in"
+        required: true
+        schema:
+          $ref: "#/definitions/Signin"
+      responses:
+        "400":
+          description: "Bad Request"
+        "200":
+          description: "Success"
+  /authentication/sign-up:
+    post:
+      tags:
+      - "authentication"
+      summary: "Api to SignUp"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "object that needs to be sign-up"
+        required: true
+        schema:
+          $ref: "#/definitions/Signup"
+      responses:
+        "400":
+          description: "Bad Request"
+        "200":
+          description: "Success"
+  /vector-class/list:
+    get:
+      tags:
+      - "vector-class"
+      summary: "Api to get List of Vector Class"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: query
+        name: vector_class_id
+        schema:
+          type: string
+        description: _id of Vector Class
+      - in: query
+        name: vector_class_uid
+        schema:
+          type: string
+        description: uid of Vector Class
+      security:
+      - api_key: []
+      responses:
+        "400":
+          description: "Bad Request"
+        "200":
+          description: "Success"
+  /region/list:
+    get:
+      tags:
+      - "region"
+      summary: "Api to get List of Regions"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: query
+        name: region_id
+        schema:
+          type: string
+        description: _id of region
+      - in: query
+        name: region_uid
+        schema:
+          type: string
+        description: uid of region
+      responses:
+        "400":
+          description: "Bad Request"
+        "200":
+          description: "Success"
+      security:
+      - api_key: []
+  /region/insert:
+    post:
+      tags:
+      - "region"
+      summary: "Api to insert a new region"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Object that needs to create a region"
+        required: true
+        schema:
+          $ref: "#/definitions/Region"
+      responses:
+        "400":
+          description: "Bad Request"
+        "200":
+          description: "Success"
+      security:
+      - api_key: []
+  /region/{region_id}/update:
+    put:
+      tags:
+      - "region"
+      summary: "Api to update a region"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: region_id
+        type: string
+        description: id of a region
+        required: true
+      - in: "body"
+        name: "body"
+        description: "Object that needs to update a region"
+        required: true
+        schema:
+          $ref: "#/definitions/Region"
+      responses:
+        "400":
+          description: "Bad Request"
+        "200":
+          description: "Success"
+      security:
+      - api_key: []
+  /region/{region_id}/delete:
+    delete:
+      tags:
+      - "region"
+      summary: "Api to delete a Region"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: region_id
+        type: string
+        description: id of a region
+        required: true
+      
+      responses:
+        "400":
+          description: "Bad Request"
+        "200":
+          description: "Success"
+      security:
+      - api_key: []
+  /region-vector/list:
+    post:
+      tags:
+      - "region-vector"
+      summary: "Api to get List of regions vector"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Object that needs to filter a region vectors"
+        required: true
+        schema:
+          $ref: "#/definitions/ListRegionVector"
+      responses:
+        "400":
+          description: "Bad Request"
+        "200":
+          description: "Success"
+      security:
+      - api_key: []
+  /region-vector/insert:
+    post:
+      tags:
+      - "region-vector"
+      summary: "Api to insert a new region vector"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Object that needs to create a region vector"
+        required: true
+        schema:
+          $ref: "#/definitions/RegionVector"
+      responses:
+        "400":
+          description: "Bad Request"
+        "200":
+          description: "Success"
+      security:
+      - api_key: []
+  /region-vector/{region_vector_id}/update:
+    put:
+      tags:
+      - "region-vector"
+      summary: "Api to update a region vector"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: region_vector_id
+        type: string
+        description: id of a region
+        required: true
+      - in: "body"
+        name: "body"
+        description: "Object that needs to update a region vector"
+        required: true
+        schema:
+          $ref: "#/definitions/RegionVector"
+      responses:
+        "400":
+          description: "Bad Request"
+        "200":
+          description: "Success"
+      security:
+      - api_key: []
+  /region-vector/{region_vector_id}/delete:
+    delete:
+      tags:
+      - "region-vector"
+      summary: "Api to delete a Region"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: region_vector_id
+        type: string
+        description: id of a region vector
+        required: true
+      responses:
+        "400":
+          description: "Bad Request"
+        "200":
+          description: "Success"
+      security:
+      - api_key: []
+definitions:
+  Signin:
+    type: object
+    properties:
+      email:
+        type: string
+        required: true
+      password:
+        type: string
+        required: true
+  Signup:
+    type: object
+    properties:
+      name:
+        type: string
+        required: true
+      email:
+        type: string
+        required: true
+      password:
+        type: string
+        required: true
+  Region:
+    type: object
+    properties:
+      name:
+        type: string
+        required: true
+      description:
+        type: string
+      location:
+        type: object
+        properties:
+          coordinates:
+            type: array
+            items:
+              type: array
+              items:
+                type: array
+                required: true
+                items:
+                  type: number
+  RegionVector:
+    type: object
+    properties:
+      name:
+        type: string
+        required: true
+      description:
+        type: string
+      class_id:  
+        type: string
+        required: true
+      region_id: 
+        type: string
+        required: true
+      polygon:
+        type: object
+        properties:
+          coordinates:
+            type: array
+            items:
+              type: array
+              items:
+                type: array
+                required: true
+                items:
+                  type: number
+  ListRegionVector: 
+    type: object
+    properties:
+      region_vector_id:
+        type: string
+        required: true
+      region_vector_uid:
+        type: string
