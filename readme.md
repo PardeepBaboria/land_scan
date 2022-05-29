@@ -3,7 +3,7 @@
 
 ## Assignment
 
-	[link to assignment](/assignment.pdf)
+[link to assignment](./assignment.pdf)
 
 ### Prerequisites
 
